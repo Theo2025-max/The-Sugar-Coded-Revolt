@@ -10985,6 +10985,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4582537266233621501, guid: 4f7b77394cb4146439ed0e6755dfe108, type: 3}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582537266233621501, guid: 4f7b77394cb4146439ed0e6755dfe108, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 0.4
       objectReference: {fileID: 0}
