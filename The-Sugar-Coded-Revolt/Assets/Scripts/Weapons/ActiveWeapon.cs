@@ -10,6 +10,8 @@ public class ActiveWeapon : MonoBehaviour
 
     const string SHOOT_STRING = "Shoot";
 
+    float timeSinceLastShoot = 0f;
+
     private void Awake()
     {
         myPlayerInput = GetComponentInParent<MyPlayerInput>();
@@ -23,16 +25,21 @@ public class ActiveWeapon : MonoBehaviour
     }
     void Update()
     {
+        timeSinceLastShoot += Time.deltaTime;
         HandleShoot();
     }
 
     private void HandleShoot()
     {
-        if (!myPlayerInput.shoot)
-            return;
+        if (!myPlayerInput.shoot)  return;
 
-        currentWeapon.Shoot(weaponSO);
-        animator.Play(SHOOT_STRING, 0, 0f);
+        if (timeSinceLastShoot >= weaponSO.FireRate)
+        {
+           currentWeapon.Shoot(weaponSO);
+            animator.Play(SHOOT_STRING, 0, 0f);
+            timeSinceLastShoot = 0f;
+        }
+
         myPlayerInput.ShootInput(false);
 
 
