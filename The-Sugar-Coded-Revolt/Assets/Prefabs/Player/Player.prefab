@@ -128,6 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 506757957057877534}
   - component: {fileID: 444741235014841291}
+  - component: {fileID: 347886767881060824}
   m_Layer: 3
   m_Name: Active Weapon
   m_TagString: Untagged
@@ -173,6 +174,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &347886767881060824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3126431195102737162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 489366ab59484b543a255e59ab6d1424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSO: {fileID: 11400000, guid: 171628d719d0d874293ea4e24cc32ac0, type: 2}
 --- !u!1 &4936562154061724409
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,10 +571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c8464eb62c75c488cc5c3f6bf635bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitVFXPrefab: {fileID: 6886829538823803421, guid: 975652863af9e0a439a8ccc11552fe20, type: 3}
-  animator: {fileID: 444741235014841291}
   muzzleFlash: {fileID: 4582537266233621501}
-  damageAmount: 1
 --- !u!1 &8777816123015703022
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,6 +662,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8569374019859112060, guid: d12e81ec53bef7c4f92bfe836c12f6ee, type: 3}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569374019859112060, guid: d12e81ec53bef7c4f92bfe836c12f6ee, type: 3}
       propertyPath: VelocityModule.x.scalar
       value: 1
       objectReference: {fileID: 0}
@@ -677,6 +692,10 @@ PrefabInstance:
     - target: {fileID: 8569374019859112060, guid: d12e81ec53bef7c4f92bfe836c12f6ee, type: 3}
       propertyPath: VelocityModule.z.minMaxState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8569374019859112060, guid: d12e81ec53bef7c4f92bfe836c12f6ee, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8569374019859112060, guid: d12e81ec53bef7c4f92bfe836c12f6ee, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
