@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Machine Gun
   m_EditorClassIdentifier: 
   Damage: 1
-  FireRate: 0.5
+  FireRate: 0.2
