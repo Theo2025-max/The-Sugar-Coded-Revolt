@@ -1,5 +1,5 @@
-using UnityEditor.iOS;
 using UnityEngine;
+
 
 public class Weapon : MonoBehaviour
 {
