@@ -4,7 +4,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [SerializeField] ParticleSystem muzzleFlash;
-
+    public GameObject HitVFX;
     public void Shoot(WeaponSO weaponSO)
     {
         muzzleFlash.Play();
@@ -14,6 +14,8 @@ public class Weapon : MonoBehaviour
         {
 
             Instantiate(weaponSO.HitVFXPrefab, hit.point, Quaternion.identity);
+            GameObject hitSparks = Instantiate(HitVFX, hit.point, Quaternion.identity);
+            Destroy(hitSparks, 1 );
             EnemyHealth enemyHealth = hit.collider.GetComponent<EnemyHealth>();
             enemyHealth?.TakeDamage(weaponSO.Damage);
 

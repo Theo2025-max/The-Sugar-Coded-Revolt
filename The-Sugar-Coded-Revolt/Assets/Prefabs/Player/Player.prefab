@@ -528,6 +528,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 3193451664282138267}
     m_Modifications:
     - target: {fileID: 4619288820819478890, guid: d12e81ec53bef7c4f92bfe836c12f6ee, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619288820819478890, guid: d12e81ec53bef7c4f92bfe836c12f6ee, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619288820819478890, guid: d12e81ec53bef7c4f92bfe836c12f6ee, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619288820819478890, guid: d12e81ec53bef7c4f92bfe836c12f6ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.753
       objectReference: {fileID: 0}
@@ -609,7 +621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8569374019859112060, guid: d12e81ec53bef7c4f92bfe836c12f6ee, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.4
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 8569374019859112060, guid: d12e81ec53bef7c4f92bfe836c12f6ee, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
@@ -629,7 +641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8569374019859112060, guid: d12e81ec53bef7c4f92bfe836c12f6ee, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
-      value: 0.0001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8569374019859112060, guid: d12e81ec53bef7c4f92bfe836c12f6ee, type: 3}
       propertyPath: VelocityModule.x.minCurve.m_Curve.Array.data[0].time
