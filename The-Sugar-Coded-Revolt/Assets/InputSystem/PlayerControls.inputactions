@@ -153,6 +153,17 @@
                 },
                 {
                     "name": "",
+                    "id": "6c367f36-7dee-496d-8b02-04d9def3f4cc",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8ba28144-49b0-443a-9692-b13c541d3e80",
                     "path": "<Pointer>/delta",
                     "interactions": "",
@@ -165,7 +176,7 @@
                 {
                     "name": "",
                     "id": "aa54d8df-7393-4f4f-9373-6003cb1ec7e1",
-                    "path": "<Gamepad>/leftStick",
+                    "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
