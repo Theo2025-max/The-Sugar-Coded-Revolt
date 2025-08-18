@@ -14,8 +14,6 @@ public class Weapon : MonoBehaviour
         {
 
             Instantiate(weaponSO.HitVFXPrefab, hit.point, Quaternion.identity);
-            GameObject hitSparks = Instantiate(HitVFX, hit.point, Quaternion.identity);
-            Destroy(hitSparks, 1 );
             EnemyHealth enemyHealth = hit.collider.GetComponent<EnemyHealth>();
             enemyHealth?.TakeDamage(weaponSO.Damage);
 
