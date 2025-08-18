@@ -3,11 +3,11 @@ using UnityEngine;
 public class ActiveWeapon : MonoBehaviour
 {
     [SerializeField] WeaponSO weaponSO;
-   
+
     Animator animator;
     MyPlayerInput myPlayerInput;
     Weapon currentWeapon;
-
+    public ParticleSystem ShootEffect;
     const string SHOOT_STRING = "Shoot";
 
     float timeSinceLastShoot = 0f;
@@ -31,13 +31,15 @@ public class ActiveWeapon : MonoBehaviour
 
     private void HandleShoot()
     {
-        if (!myPlayerInput.shoot)  return;
+        if (!myPlayerInput.shoot) return;
 
         if (timeSinceLastShoot >= weaponSO.FireRate)
         {
-           currentWeapon.Shoot(weaponSO);
+            currentWeapon.Shoot(weaponSO);
             animator.Play(SHOOT_STRING, 0, 0f);
             timeSinceLastShoot = 0f;
+            ShootEffect.Play();
+
         }
 
         myPlayerInput.ShootInput(false);
