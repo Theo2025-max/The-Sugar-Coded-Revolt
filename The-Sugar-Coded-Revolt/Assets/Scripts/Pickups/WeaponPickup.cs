@@ -2,15 +2,16 @@ using UnityEngine;
 
 public class WeaponPickup : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] WeaponSO weaponSO;
 
-    // Update is called once per frame
-    void Update()
+    const string PLAYER_STRING = "Player";
+    void OnTriggerEnter(Collider other)
     {
-        
+       if (other.CompareTag(PLAYER_STRING))
+        {
+            ActiveWeapon activeWeapon = other.GetComponentInChildren<ActiveWeapon>();
+            activeWeapon.SwitchWeapon(weaponSO);
+            Destroy(this.gameObject);
+        }
     }
 }
