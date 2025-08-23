@@ -1061,7 +1061,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 74783d0a42154644ba47f5d707f403e3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2040877927}
+      addedObject: {fileID: 2040877930}
   m_SourcePrefab: {fileID: 100100000, guid: 74783d0a42154644ba47f5d707f403e3, type: 3}
 --- !u!1 &440407263 stripped
 GameObject:
@@ -4244,9 +4244,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1518147013}
   - component: {fileID: 1518147016}
-  - component: {fileID: 1518147017}
   - component: {fileID: 1518147015}
   - component: {fileID: 1518147014}
+  - component: {fileID: 1518147017}
   m_Layer: 0
   m_Name: Robot
   m_TagString: Untagged
@@ -4669,7 +4669,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 74783d0a42154644ba47f5d707f403e3, type: 3}
   m_PrefabInstance: {fileID: 419937958}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &2040877927
+--- !u!95 &2040877930
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
