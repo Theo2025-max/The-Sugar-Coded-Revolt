@@ -73,31 +73,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3268789577833604023, guid: 06bad12bc5ee51c4885476960df37ce7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -74.3
+      value: -76.88
       objectReference: {fileID: 0}
     - target: {fileID: 3268789577833604023, guid: 06bad12bc5ee51c4885476960df37ce7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.94
+      value: 2.73
       objectReference: {fileID: 0}
     - target: {fileID: 3268789577833604023, guid: 06bad12bc5ee51c4885476960df37ce7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.49
+      value: -5.46
       objectReference: {fileID: 0}
     - target: {fileID: 3268789577833604023, guid: 06bad12bc5ee51c4885476960df37ce7, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.79856694
       objectReference: {fileID: 0}
     - target: {fileID: 3268789577833604023, guid: 06bad12bc5ee51c4885476960df37ce7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3268789577833604023, guid: 06bad12bc5ee51c4885476960df37ce7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.60190606
       objectReference: {fileID: 0}
     - target: {fileID: 3268789577833604023, guid: 06bad12bc5ee51c4885476960df37ce7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3268789577833604023, guid: 06bad12bc5ee51c4885476960df37ce7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -105,12 +105,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3268789577833604023, guid: 06bad12bc5ee51c4885476960df37ce7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -74.013
       objectReference: {fileID: 0}
     - target: {fileID: 3268789577833604023, guid: 06bad12bc5ee51c4885476960df37ce7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7260611835191842963, guid: 06bad12bc5ee51c4885476960df37ce7, type: 3}
+      propertyPath: weaponSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 171628d719d0d874293ea4e24cc32ac0, type: 2}
     - target: {fileID: 7285737820220823099, guid: 06bad12bc5ee51c4885476960df37ce7, type: 3}
       propertyPath: m_Name
       value: Pistol Pickup
@@ -147,7 +151,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
