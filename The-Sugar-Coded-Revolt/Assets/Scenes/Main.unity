@@ -681,7 +681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &394655372
 Transform:
   m_ObjectHideFlags: 0
@@ -4618,10 +4618,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1449098295493420466, guid: 4f7b77394cb4146439ed0e6755dfe108, type: 3}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1976814750599884098, guid: 4f7b77394cb4146439ed0e6755dfe108, type: 3}
       propertyPath: m_LocalPosition.x
       value: -57.68
@@ -4662,21 +4658,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4936562154061724409, guid: 4f7b77394cb4146439ed0e6755dfe108, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5607616914133853379, guid: 4f7b77394cb4146439ed0e6755dfe108, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8718052477041010479, guid: 4f7b77394cb4146439ed0e6755dfe108, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 8718052477041010479, guid: 4f7b77394cb4146439ed0e6755dfe108, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.43
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4693,7 +4677,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 708763628671412226, guid: f65b39512fabd094f9d1d1d5e3791442, type: 3}
       propertyPath: m_Radius
-      value: 0.8
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 2471039377951768548, guid: f65b39512fabd094f9d1d1d5e3791442, type: 3}
       propertyPath: m_LocalPosition.x

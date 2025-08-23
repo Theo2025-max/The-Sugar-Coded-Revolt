@@ -7,7 +7,6 @@ public class ActiveWeapon : MonoBehaviour
     Animator animator;
     MyPlayerInput myPlayerInput;
     Weapon currentWeapon;
-    public ParticleSystem ShootEffect;
     const string SHOOT_STRING = "Shoot";
 
     float timeSinceLastShoot = 0f;
@@ -16,13 +15,13 @@ public class ActiveWeapon : MonoBehaviour
     {
         myPlayerInput = GetComponentInParent<MyPlayerInput>();
         animator = GetComponent<Animator>();
-
     }
 
     private void Start()
     {
         currentWeapon = GetComponentInChildren<Weapon>();
     }
+
     void Update()
     {
         timeSinceLastShoot += Time.deltaTime;
@@ -38,11 +37,11 @@ public class ActiveWeapon : MonoBehaviour
             currentWeapon.Shoot(weaponSO);
             animator.Play(SHOOT_STRING, 0, 0f);
             timeSinceLastShoot = 0f;
-
         }
 
-        myPlayerInput.ShootInput(false);
-
-
+        if (!weaponSO.IsAutomatic)
+        {
+            myPlayerInput.ShootInput(false);
+        }
     }
 }
