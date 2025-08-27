@@ -4724,63 +4724,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dcd05d760940804e8b9f104d7e9c31a, type: 3}
---- !u!1001 &4523144809028768166
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2348361932089804822, guid: 339f172d72ff5e64eb5e32b852bca215, type: 3}
-      propertyPath: m_Name
-      value: Sniper Rifle Pickup
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292653356542272846, guid: 339f172d72ff5e64eb5e32b852bca215, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -71.21783
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292653356542272846, guid: 339f172d72ff5e64eb5e32b852bca215, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292653356542272846, guid: 339f172d72ff5e64eb5e32b852bca215, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -11.114871
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292653356542272846, guid: 339f172d72ff5e64eb5e32b852bca215, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292653356542272846, guid: 339f172d72ff5e64eb5e32b852bca215, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292653356542272846, guid: 339f172d72ff5e64eb5e32b852bca215, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292653356542272846, guid: 339f172d72ff5e64eb5e32b852bca215, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292653356542272846, guid: 339f172d72ff5e64eb5e32b852bca215, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292653356542272846, guid: 339f172d72ff5e64eb5e32b852bca215, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4292653356542272846, guid: 339f172d72ff5e64eb5e32b852bca215, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 339f172d72ff5e64eb5e32b852bca215, type: 3}
 --- !u!1001 &4551989021712149111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4919,4 +4862,3 @@ SceneRoots:
   - {fileID: 302873339}
   - {fileID: 3183364322709262199}
   - {fileID: 3724138836832180420}
-  - {fileID: 4523144809028768166}
