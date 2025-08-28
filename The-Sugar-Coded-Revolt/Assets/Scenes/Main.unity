@@ -4561,6 +4561,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Machine Gun Pickup
       objectReference: {fileID: 0}
+    - target: {fileID: 290038131199494358, guid: 823e60d4c0ad7714e9f15fe15eb0ba9a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 290038131199494358, guid: 823e60d4c0ad7714e9f15fe15eb0ba9a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.81
+      objectReference: {fileID: 0}
     - target: {fileID: 9116559842966251824, guid: 823e60d4c0ad7714e9f15fe15eb0ba9a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -74.14
@@ -4681,7 +4689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4846734614309775271, guid: 7dcd05d760940804e8b9f104d7e9c31a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -76.88
+      value: -92.59
       objectReference: {fileID: 0}
     - target: {fileID: 4846734614309775271, guid: 7dcd05d760940804e8b9f104d7e9c31a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4689,7 +4697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4846734614309775271, guid: 7dcd05d760940804e8b9f104d7e9c31a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.46
+      value: 2.89
       objectReference: {fileID: 0}
     - target: {fileID: 4846734614309775271, guid: 7dcd05d760940804e8b9f104d7e9c31a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4732,6 +4740,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1391837848616959230, guid: 339f172d72ff5e64eb5e32b852bca215, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391837848616959230, guid: 339f172d72ff5e64eb5e32b852bca215, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -17.91
+      objectReference: {fileID: 0}
     - target: {fileID: 2813373424069298246, guid: 339f172d72ff5e64eb5e32b852bca215, type: 3}
       propertyPath: m_LocalPosition.x
       value: -74.14
