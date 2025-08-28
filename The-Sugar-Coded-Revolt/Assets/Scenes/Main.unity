@@ -4122,6 +4122,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -933546157675922527, guid: 5d9e8583dc386c24bad45bf31ca4065e, type: 3}
+--- !u!114 &1562827590 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6248626208041316665, guid: e3bd948313db91b419f53fe02f9b98b7, type: 3}
+  m_PrefabInstance: {fileID: 3286663083630159147}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1600633267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4865,6 +4876,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 347886767881060824, guid: 4f7b77394cb4146439ed0e6755dfe108, type: 3}
+      propertyPath: zoomVignette
+      value: 
+      objectReference: {fileID: 1652803244}
+    - target: {fileID: 347886767881060824, guid: 4f7b77394cb4146439ed0e6755dfe108, type: 3}
+      propertyPath: playerFollowCamera
+      value: 
+      objectReference: {fileID: 1562827590}
     - target: {fileID: 1976814750599884098, guid: 4f7b77394cb4146439ed0e6755dfe108, type: 3}
       propertyPath: m_LocalPosition.x
       value: -57.68
@@ -4908,6 +4927,14 @@ PrefabInstance:
     - target: {fileID: 5607616914133853379, guid: 4f7b77394cb4146439ed0e6755dfe108, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6832770743050169967, guid: 4f7b77394cb4146439ed0e6755dfe108, type: 3}
+      propertyPath: moveSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6832770743050169967, guid: 4f7b77394cb4146439ed0e6755dfe108, type: 3}
+      propertyPath: sprintSpeed
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

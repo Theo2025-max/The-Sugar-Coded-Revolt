@@ -1,8 +1,11 @@
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class ActiveWeapon : MonoBehaviour
 {
     [SerializeField] WeaponSO weaponSO;
+    [SerializeField] CinemachineCamera playerFollowCamera;
+    [SerializeField] GameObject zoomVignette;
 
     Animator animator;
     MyPlayerInput myPlayerInput;
@@ -10,11 +13,14 @@ public class ActiveWeapon : MonoBehaviour
     const string SHOOT_STRING = "Shoot";
 
     float timeSinceLastShoot = 0f;
+    float defaultFOV;
 
     private void Awake()
     {
         myPlayerInput = GetComponentInParent<MyPlayerInput>();
         animator = GetComponent<Animator>();
+        defaultFOV = playerFollowCamera.Lens.FieldOfView;
+
     }
 
     private void Start()
@@ -64,11 +70,13 @@ public class ActiveWeapon : MonoBehaviour
 
         if (myPlayerInput.zoom)
         {
-            Debug.Log("Zooming in");
+            playerFollowCamera.Lens.FieldOfView = weaponSO.ZoomAmount;
+            zoomVignette.SetActive(true);
         }
         else
         {
-            Debug.Log("Not Zooming In");
+            playerFollowCamera.Lens.FieldOfView = defaultFOV;
+            zoomVignette.SetActive(false);
         }
     }
 }
