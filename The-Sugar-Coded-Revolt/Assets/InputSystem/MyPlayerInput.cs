@@ -11,6 +11,7 @@ public class MyPlayerInput : MonoBehaviour
     public bool jump;
     public bool sprint;
     public bool shoot;
+    public bool zoom;
 
     [Header("Movement Options")]
     public bool analogMovement;
@@ -47,6 +48,11 @@ public class MyPlayerInput : MonoBehaviour
         ShootInput(value.isPressed);
     }
 
+    public void OnZoom(InputValue value)
+    {
+        ZoomInput(value.isPressed);
+    }
+
     // Pause action: I'll map this in Input Actions (ESC key or Start button on controller)
     public void OnPause(InputValue value)
     {
@@ -81,6 +87,11 @@ public class MyPlayerInput : MonoBehaviour
     public void ShootInput(bool state)
     {
         shoot = state;
+    }
+
+    public void ZoomInput(bool state)
+    {
+        zoom = state;
     }
 
     private void OnApplicationFocus(bool hasFocus)
