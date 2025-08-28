@@ -9,17 +9,21 @@ public class ActiveWeapon : MonoBehaviour
 
     Animator animator;
     MyPlayerInput myPlayerInput;
+    MyFirstPersonController myFirstPersonController;
     Weapon currentWeapon;
     const string SHOOT_STRING = "Shoot";
 
     float timeSinceLastShoot = 0f;
     float defaultFOV;
+    float defaultRotationSpeed;
 
     private void Awake()
     {
         myPlayerInput = GetComponentInParent<MyPlayerInput>();
+        myFirstPersonController = GetComponentInParent<MyFirstPersonController>();
         animator = GetComponent<Animator>();
         defaultFOV = playerFollowCamera.Lens.FieldOfView;
+        defaultRotationSpeed = myFirstPersonController.rotationSpeed;
 
     }
 
@@ -72,11 +76,13 @@ public class ActiveWeapon : MonoBehaviour
         {
             playerFollowCamera.Lens.FieldOfView = weaponSO.ZoomAmount;
             zoomVignette.SetActive(true);
+            myFirstPersonController.ChangeRotationSpeed(weaponSO.ZoomRotationSpeed);
         }
         else
         {
             playerFollowCamera.Lens.FieldOfView = defaultFOV;
             zoomVignette.SetActive(false);
+            myFirstPersonController.ChangeRotationSpeed(defaultRotationSpeed);
         }
     }
 }

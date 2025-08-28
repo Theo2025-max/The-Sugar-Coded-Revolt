@@ -61,6 +61,11 @@ public class MyFirstPersonController : MonoBehaviour
         RotateCamera();
     }
 
+    public void ChangeRotationSpeed(float amount)
+    {
+        rotationSpeed = amount;
+    }
+
     private void HandleMovement()
     {
         Vector3 inputDirection = new Vector3(input.move.x, 0.0f, input.move.y);
