@@ -4936,6 +4936,18 @@ PrefabInstance:
       propertyPath: sprintSpeed
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 7381170442508633621, guid: 4f7b77394cb4146439ed0e6755dfe108, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.414
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381170442508633621, guid: 4f7b77394cb4146439ed0e6755dfe108, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.037
+      objectReference: {fileID: 0}
+    - target: {fileID: 7381170442508633621, guid: 4f7b77394cb4146439ed0e6755dfe108, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.459
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
