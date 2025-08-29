@@ -4937,7 +4937,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   muzzleFlash: {fileID: 4198249535823543609}
-  HitVFX: {fileID: 6886829538823803421, guid: 975652863af9e0a439a8ccc11552fe20, type: 3}
+  interactionLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &8938041799434432298
 GameObject:
   m_ObjectHideFlags: 0
