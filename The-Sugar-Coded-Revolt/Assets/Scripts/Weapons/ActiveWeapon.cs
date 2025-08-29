@@ -5,7 +5,8 @@ using UnityEngine;
 public class ActiveWeapon : MonoBehaviour
 {
     [SerializeField] WeaponSO startingWeapon;
-    [SerializeField] CinemachineCamera playerFollowCamera;
+    [SerializeField] CinemachineCamera playerFollowCamera; 
+    [SerializeField] Camera weaponCamera;
     [SerializeField] GameObject zoomVignette;
     [SerializeField] TMP_Text ammoText;
 
@@ -96,12 +97,14 @@ public class ActiveWeapon : MonoBehaviour
         if (myPlayerInput.zoom)
         {
             playerFollowCamera.Lens.FieldOfView = CurrentWeaponSO.ZoomAmount;
+            weaponCamera.fieldOfView = CurrentWeaponSO.ZoomRotationSpeed;
             zoomVignette.SetActive(true);
             myFirstPersonController.ChangeRotationSpeed(CurrentWeaponSO.ZoomRotationSpeed);
         }
         else
         {
             playerFollowCamera.Lens.FieldOfView = defaultFOV;
+            weaponCamera.fieldOfView = defaultFOV;
             zoomVignette.SetActive(false);
             myFirstPersonController.ChangeRotationSpeed(defaultRotationSpeed);
         }
