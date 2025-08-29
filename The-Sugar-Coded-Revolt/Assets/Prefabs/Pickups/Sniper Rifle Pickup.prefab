@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 763c3dd1212e42a46abba92d0a87fe31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 100
   weaponSO: {fileID: 11400000, guid: 642336b9e5e0f2f4baf1c30ec85e5644, type: 2}
 --- !u!136 &5837778452540913676
 CapsuleCollider:
@@ -94,14 +95,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4146986328690447667}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.4819495, y: 0.50461936, z: 0.49503797, w: 0.5177078}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1391837848616959230}
   m_Father: {fileID: 2813373424069298246}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -87, y: 60, z: 30}
 --- !u!1001 &1502641361373666069
 PrefabInstance:
   m_ObjectHideFlags: 0

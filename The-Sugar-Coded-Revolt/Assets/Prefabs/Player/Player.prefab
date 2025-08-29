@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponSO: {fileID: 11400000, guid: 642336b9e5e0f2f4baf1c30ec85e5644, type: 2}
+  playerFollowCamera: {fileID: 0}
+  zoomVignette: {fileID: 0}
 --- !u!1 &4936562154061724409
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,8 +288,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c486269ef657e478f929884f9d6f31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
-  sprintSpeed: 12
+  moveSpeed: 7
+  sprintSpeed: 11
   rotationSpeed: 0.8
   jumpHeight: 1.5
   gravity: -15
@@ -331,6 +333,7 @@ MonoBehaviour:
   jump: 0
   sprint: 0
   shoot: 0
+  zoom: 0
   analogMovement: 0
   cursorLocked: 1
   cursorAffectsLook: 1
@@ -491,6 +494,18 @@ PrefabInstance:
     - target: {fileID: 4406344247821413055, guid: 943226fe41c5e6845b561c9d244ba012, type: 3}
       propertyPath: m_CastShadows
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597419296343509791, guid: 943226fe41c5e6845b561c9d244ba012, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.414
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597419296343509791, guid: 943226fe41c5e6845b561c9d244ba012, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.037
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597419296343509791, guid: 943226fe41c5e6845b561c9d244ba012, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.459
       objectReference: {fileID: 0}
     - target: {fileID: 6232235237679776250, guid: 943226fe41c5e6845b561c9d244ba012, type: 3}
       propertyPath: m_Name
