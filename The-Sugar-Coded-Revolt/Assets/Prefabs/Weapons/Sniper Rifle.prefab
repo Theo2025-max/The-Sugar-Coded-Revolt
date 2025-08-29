@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1942107586080763759}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1050742744732386990}
   - component: {fileID: 930544207440981644}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Sniper Rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Final Sniper Gub
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: feebe04d43109114d9a7ebb45b19c49d, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -207,6 +211,10 @@ PrefabInstance:
     - target: {fileID: 7861182395856559345, guid: d12e81ec53bef7c4f92bfe836c12f6ee, type: 3}
       propertyPath: m_Name
       value: MuzzleFlash_FireAmmo_Yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861182395856559345, guid: d12e81ec53bef7c4f92bfe836c12f6ee, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8569374019859112060, guid: d12e81ec53bef7c4f92bfe836c12f6ee, type: 3}
       propertyPath: scalingMode

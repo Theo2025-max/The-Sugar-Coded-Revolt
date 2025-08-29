@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6397218891898385853}
   - component: {fileID: 6537666741387107743}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5521484383510191228}
-  m_Layer: 3
+  m_Layer: 8
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,6 +145,10 @@ PrefabInstance:
     - target: {fileID: 7861182395856559345, guid: d12e81ec53bef7c4f92bfe836c12f6ee, type: 3}
       propertyPath: m_Name
       value: MuzzleFlash_FireAmmo_Yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861182395856559345, guid: d12e81ec53bef7c4f92bfe836c12f6ee, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8569374019859112060, guid: d12e81ec53bef7c4f92bfe836c12f6ee, type: 3}
       propertyPath: scalingMode
@@ -349,9 +353,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1703939793166337085, guid: a0780e83bcc576d47a01684d01c8102b, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a0780e83bcc576d47a01684d01c8102b, type: 3}
       propertyPath: m_Name
       value: Official Gun Blender
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a0780e83bcc576d47a01684d01c8102b, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
