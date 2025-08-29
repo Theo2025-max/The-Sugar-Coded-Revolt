@@ -53,7 +53,6 @@ public class ActiveWeapon : MonoBehaviour
             currentAmmo = CurrentWeaponSO.MagazineSize;
         }
 
-
         ammoText.text = currentAmmo.ToString("D2");
 
     }
