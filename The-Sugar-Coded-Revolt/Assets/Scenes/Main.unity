@@ -4953,6 +4953,67 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -968022052266191351, guid: a1d466a5a5a334d4285c1b88c5bf9416, type: 3}
+--- !u!1001 &1486365886896236366
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 969346910096803350, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -55.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 969346910096803350, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 969346910096803350, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 969346910096803350, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 969346910096803350, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 969346910096803350, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 969346910096803350, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 969346910096803350, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 969346910096803350, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 969346910096803350, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1830034822264660533, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 3992958635172819487, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
+      propertyPath: m_Name
+      value: Robot Explosion VFX
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
 --- !u!4 &1763465575992898995 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3304108183176703054, guid: 4f7b77394cb4146439ed0e6755dfe108, type: 3}
@@ -5405,3 +5466,4 @@ SceneRoots:
   - {fileID: 3724138836832180420}
   - {fileID: 3791729249685723748}
   - {fileID: 2166537112608035159}
+  - {fileID: 1486365886896236366}

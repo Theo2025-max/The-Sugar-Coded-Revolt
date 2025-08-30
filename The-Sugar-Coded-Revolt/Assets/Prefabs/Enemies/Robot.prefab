@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08fbd1bd7dfd6f34088dcfbd84c96a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robotExplosionVFX: {fileID: 3992958635172819487, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
   startingHealth: 3
 --- !u!1 &5438680890223574512
 GameObject:
