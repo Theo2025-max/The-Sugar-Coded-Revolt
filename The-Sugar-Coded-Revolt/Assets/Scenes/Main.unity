@@ -4962,6 +4962,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 969346910096803350, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 969346910096803350, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 969346910096803350, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 969346910096803350, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -55.4
       objectReference: {fileID: 0}
@@ -5005,9 +5017,21 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 1894760568226509802, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3992958635172819487, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
       propertyPath: m_Name
       value: Robot Explosion VFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778787529701350544, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778787529701350544, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
