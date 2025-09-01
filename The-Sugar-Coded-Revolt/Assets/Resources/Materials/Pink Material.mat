@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Blue_Mat
+  m_Name: Pink Material
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -118,9 +118,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.48507768, g: 0.67556465, b: 0.7830189, a: 1}
-    - _Color: {r: 0.48507768, g: 0.6755646, b: 0.7830188, a: 1}
-    - _EmissionColor: {r: 1.0008746, g: 7.4713173, b: 5.7250624, a: 1}
+    - _BaseColor: {r: 0.4490565, g: 0.080491215, b: 0.3328043, a: 1}
+    - _Color: {r: 0.44905645, g: 0.08049118, b: 0.33280426, a: 1}
+    - _EmissionColor: {r: 82.7581, g: 7.338922, b: 31.7999, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
