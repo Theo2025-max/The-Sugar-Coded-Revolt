@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2471039377951768548}
   - component: {fileID: 4940967659719115094}
-  - component: {fileID: 708763628671412226}
+  - component: {fileID: 1184853581045783710}
+  - component: {fileID: 845223884278521858}
   - component: {fileID: 1605967472924373894}
   - component: {fileID: 5896547109725561178}
   - component: {fileID: 4524052644954135733}
@@ -59,7 +60,30 @@ NavMeshAgent:
   m_BaseOffset: 0.56
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!136 &708763628671412226
+--- !u!136 &1184853581045783710
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946775867754262363}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &845223884278521858
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08fbd1bd7dfd6f34088dcfbd84c96a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  robotExplosionVFX: {fileID: 3992958635172819487, guid: de29789759d8a8247a77a1fb69c2abb8, type: 3}
+  robotExplosionVFX: {fileID: 680397667454459199, guid: 157004e5757cbac47ab0df2da2123685, type: 3}
   startingHealth: 3
 --- !u!1 &5438680890223574512
 GameObject:

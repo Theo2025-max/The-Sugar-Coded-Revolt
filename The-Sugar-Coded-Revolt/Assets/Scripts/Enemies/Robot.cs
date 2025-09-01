@@ -29,7 +29,7 @@ public class Robot : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(PLAYER_STRING))
         {
