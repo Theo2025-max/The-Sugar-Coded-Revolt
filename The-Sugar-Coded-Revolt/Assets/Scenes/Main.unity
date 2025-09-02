@@ -3654,7 +3654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca16f9ff5dd080b42a2178452a5461b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemiesLeftText: {fileID: 0}
+  enemiesLeftText: {fileID: 1240216154}
   youWinText: {fileID: 1321709184}
 --- !u!4 &674728254
 Transform:
@@ -3664,7 +3664,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674728252}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 993.0796, y: 935.3959, z: 4.492523}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10347,6 +10347,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 832575519}
   - {fileID: 410087041}
+  - {fileID: 674728254}
   - {fileID: 2066355886}
   - {fileID: 4551989021712149111}
   - {fileID: 2011734893}
@@ -10357,4 +10358,3 @@ SceneRoots:
   - {fileID: 3724138836832180420}
   - {fileID: 3791729249685723748}
   - {fileID: 2166537112608035159}
-  - {fileID: 674728254}
