@@ -14,7 +14,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = startingHealth;
     }
 
-    private void Start()
+    void Start()
     {
         gameManager = FindFirstObjectByType<GameManager>();
         gameManager.AdjustEnemiesLeft(1);
