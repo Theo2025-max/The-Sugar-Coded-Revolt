@@ -1,9 +1,11 @@
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance { get; private set; }
 
     [SerializeField] TMP_Text enemiesLeftText;
     [SerializeField] GameObject youWinText;
@@ -11,6 +13,19 @@ public class GameManager : MonoBehaviour
     int enemiesLeft = 0;
 
     const string ENEMIES_LEFT_STRING = "Enemies Left: ";
+
+    private void Awake()
+    {
+        if(instance != null & instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+
     public void AdjustEnemiesLeft(int amount)
     {
         enemiesLeft += amount;

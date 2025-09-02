@@ -9,6 +9,7 @@ public class Robot : MonoBehaviour
 
     const string PLAYER_STRING = "Player";
 
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -34,6 +35,7 @@ public class Robot : MonoBehaviour
         if (other.CompareTag(PLAYER_STRING))
         {
             EnemyHealth enemyHealth = GetComponent<EnemyHealth>();
+            GameManager.instance.AdjustEnemiesLeft(-1);
             enemyHealth.SelfDestruct();
         }
     

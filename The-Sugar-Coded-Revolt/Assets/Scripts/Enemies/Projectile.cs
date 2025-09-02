@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    private static Projectile instance1;
     [SerializeField] float speed = 30f;
     [SerializeField] GameObject projectileHITVFX;
 
