@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour
     public void AdjustEnemiesLeft(int amount)
     {
         enemiesLeft += amount;
-        enemiesLeftText.text = ENEMIES_LEFT_STRING + enemiesLeftText.ToString();
+        string enemiesLeftTMP = enemiesLeft.ToString();
+        enemiesLeftText.text = ENEMIES_LEFT_STRING + enemiesLeftTMP;
+        //Debug.Log(ENEMIES_LEFT_STRING + enemiesLeftText.ToString());
 
         if (enemiesLeft <= 0)
         {
