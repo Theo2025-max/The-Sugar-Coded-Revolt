@@ -3654,7 +3654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca16f9ff5dd080b42a2178452a5461b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemiesLeftText: {fileID: 1240216154}
+  enemiesLeftText: {fileID: 0}
   youWinText: {fileID: 1321709184}
 --- !u!4 &674728254
 Transform:
