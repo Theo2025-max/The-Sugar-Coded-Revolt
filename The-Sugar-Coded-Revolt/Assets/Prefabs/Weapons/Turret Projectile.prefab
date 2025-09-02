@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  projectileHITVFX: {fileID: 7652357993055584041, guid: 83bfb55701fae9245a2eb13aa427bae5, type: 3}
+  projectileHITVFX: {fileID: 2589783990346928329, guid: 83bfb55701fae9245a2eb13aa427bae5, type: 3}
 --- !u!54 &7063417322601594773
 Rigidbody:
   m_ObjectHideFlags: 0

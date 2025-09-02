@@ -3764,7 +3764,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &684489723
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10336,6 +10336,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6832770743050169967, guid: 4f7b77394cb4146439ed0e6755dfe108, type: 3}
+      propertyPath: rotationSpeed
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10353,8 +10357,8 @@ SceneRoots:
   - {fileID: 2011734893}
   - {fileID: 748414145}
   - {fileID: 1229241111}
-  - {fileID: 302873339}
   - {fileID: 3183364322709262199}
   - {fileID: 3724138836832180420}
   - {fileID: 3791729249685723748}
   - {fileID: 2166537112608035159}
+  - {fileID: 302873339}
