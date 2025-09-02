@@ -7,18 +7,26 @@ public class EnemyHealth : MonoBehaviour
 
     int currentHealth;
 
+    GameManager gameManager;
+
     private void Awake()
     {
         currentHealth = startingHealth;
     }
 
+    private void Start()
+    {
+        gameManager = FindFirstObjectByType<GameManager>();
+        gameManager.AdjustEnemiesLeft(1);
+    }
 
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
 
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
+            gameManager.AdjustEnemiesLeft(-1);
             SelfDestruct();
         }
     }

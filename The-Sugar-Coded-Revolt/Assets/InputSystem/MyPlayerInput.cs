@@ -20,6 +20,11 @@ public class MyPlayerInput : MonoBehaviour
     public bool cursorLocked = true;
     public bool cursorAffectsLook = true;
 
+    private void Start()
+    {
+        SetCursorState(true);
+    }
+
 #if ENABLE_INPUT_SYSTEM
     public void OnMove(InputValue value)
     {
@@ -95,13 +100,14 @@ public class MyPlayerInput : MonoBehaviour
     }
 
     private void OnApplicationFocus(bool hasFocus)
-    {
-        SetCursorState(cursorLocked);
-    }
+     {
+         SetCursorState(cursorLocked);
+     }
 
-    private void SetCursorState(bool isLocked)
+    public void SetCursorState(bool isLocked)
     {
         Cursor.lockState = isLocked ? CursorLockMode.Locked : CursorLockMode.None;
+
     }
 
     private void Update()
