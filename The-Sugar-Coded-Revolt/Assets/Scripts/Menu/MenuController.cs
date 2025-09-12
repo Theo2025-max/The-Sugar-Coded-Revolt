@@ -28,8 +28,9 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    public void ExitButton()
+    public void QuitButton()
     {
         Application.Quit();
+        Debug.Log("Peace out, Theo! The app has taken a nap.");
     }
 }
