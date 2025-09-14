@@ -12,7 +12,7 @@ public class MyFirstPersonController : MonoBehaviour
     [Header("Player Settings")]
     public float moveSpeed = 4.0f;
     public float sprintSpeed = 6.0f;
-    public float rotationSpeed = 1.0f;
+    public float rotationSpeed = 0.47f; // default value
     public float jumpHeight = 1.2f;
     public float gravity = -15.0f;
 
@@ -48,6 +48,9 @@ public class MyFirstPersonController : MonoBehaviour
     {
         jumpTimeoutDelta = jumpTimeout;
         fallTimeoutDelta = fallTimeout;
+
+        // Load saved sensitivity from PlayerPrefs (default 0.47)
+        rotationSpeed = PlayerPrefs.GetFloat("masterSen", rotationSpeed);
     }
 
     private void Update()
