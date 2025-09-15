@@ -53,7 +53,7 @@ public class MenuController : MonoBehaviour
         controllerSenSlider.minValue = 0.05f; // clamp min
         controllerSenSlider.maxValue = 1f;    // clamp max
         controllerSenSlider.value = mainControllerSen;
-        ControllerSenTextValue.text = mainControllerSen.ToString("0.000");
+        ControllerSenTextValue.text = mainControllerSen.ToString("0.00");
 
         // Volume setup
         float savedVolume = PlayerPrefs.GetFloat("masterVolume", defaultVolume);
@@ -105,7 +105,7 @@ public class MenuController : MonoBehaviour
     public void SetControllerSen(float sensitivity)
     {
         mainControllerSen = Mathf.Clamp(sensitivity, 0.05f, 1f);
-        ControllerSenTextValue.text = mainControllerSen.ToString("0.000");
+        ControllerSenTextValue.text = mainControllerSen.ToString("0.00");
 
         PlayerPrefs.SetFloat("masterSen", mainControllerSen);
     }
@@ -129,7 +129,7 @@ public class MenuController : MonoBehaviour
 
         if (MenuType == "Gameplay")
         {
-            ControllerSenTextValue.text = defaultSen.ToString("0.000");
+            ControllerSenTextValue.text = defaultSen.ToString("0.00");
             controllerSenSlider.value = defaultSen;
             mainControllerSen = defaultSen;
             GameplayApply();
