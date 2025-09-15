@@ -1,24 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
-public class MenuController : MonoBehaviour
+public class PauseMenuController : MonoBehaviour
 {
-    // ------------------- PERSISTENCE ACROSS SCENES -------------------
-    private void Awake()
-    {
-        // If another MenuController already exists, destroy this one
-        if (Object.FindObjectsByType<MenuController>(FindObjectsSortMode.None).Length > 1)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        // Keep this MenuController alive across scenes
-        DontDestroyOnLoad(gameObject);
-    }
 
     // ------------------- VOLUME SETTINGS -------------------
     [Header("Volume Setting")]
@@ -37,13 +23,7 @@ public class MenuController : MonoBehaviour
     [Header("Confirmation")]
     [SerializeField] private GameObject comfirmationPrompt = null;
 
-    // ------------------- LEVELS TO LOAD -------------------
-    [Header("Levels To Load")]
-    public string _newGameLevel;
-    private string levelToLoad;
-    [SerializeField] private GameObject noSavedGameDialog = null;
 
-    // ------------------- INITIALIZATION -------------------
     private void Start()
     {
         // Load saved sensitivity
@@ -62,31 +42,6 @@ public class MenuController : MonoBehaviour
         volumeTextValue.text = savedVolume.ToString("0.0");
     }
 
-    // ------------------- SCENE MANAGEMENT -------------------
-    public void NewGameDialogYes()
-    {
-        SceneManager.LoadScene(_newGameLevel);
-    }
-
-    public void LoadGameDialogYes()
-    {
-        if (PlayerPrefs.HasKey("SavedLevel"))
-        {
-            levelToLoad = PlayerPrefs.GetString("SavedLevel");
-            SceneManager.LoadScene(levelToLoad);
-        }
-        else
-        {
-            noSavedGameDialog.SetActive(true);
-        }
-    }
-
-    // ------------------- QUIT GAME -------------------
-    public void QuitButton()
-    {
-        Debug.Log("Peace out! Application quitting.");
-        Application.Quit();
-    }
 
     // ------------------- VOLUME CONTROLS -------------------
     public void SetVolume(float volume)
@@ -109,6 +64,7 @@ public class MenuController : MonoBehaviour
 
         PlayerPrefs.SetFloat("masterSen", mainControllerSen);
     }
+
 
     public void GameplayApply()
     {
