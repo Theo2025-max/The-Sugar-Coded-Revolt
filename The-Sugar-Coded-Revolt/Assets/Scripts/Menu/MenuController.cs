@@ -6,9 +6,13 @@ using TMPro;
 
 public class MenuController : MonoBehaviour
 {
+    private UI_FadeEffect fadeEffect;
+
     // ------------------- PERSISTENCE ACROSS SCENES -------------------
     private void Awake()
     {
+        fadeEffect = Object.FindFirstObjectByType<UI_FadeEffect>();
+
         // If another MenuController already exists, destroy this one
         if (Object.FindObjectsByType<MenuController>(FindObjectsSortMode.None).Length > 1)
         {
@@ -46,6 +50,9 @@ public class MenuController : MonoBehaviour
     // ------------------- INITIALIZATION -------------------
     private void Start()
     {
+        if (fadeEffect != null)
+            fadeEffect.ScreenFade(0, 1.5f);
+
         // Load saved sensitivity
         mainControllerSen = PlayerPrefs.GetFloat("masterSen", defaultSen);
 
@@ -65,7 +72,7 @@ public class MenuController : MonoBehaviour
     // ------------------- SCENE MANAGEMENT -------------------
     public void NewGameDialogYes()
     {
-        SceneManager.LoadScene(_newGameLevel);
+        StartCoroutine(LoadSceneWithFade(_newGameLevel));
     }
 
     public void LoadGameDialogYes()
@@ -73,11 +80,36 @@ public class MenuController : MonoBehaviour
         if (PlayerPrefs.HasKey("SavedLevel"))
         {
             levelToLoad = PlayerPrefs.GetString("SavedLevel");
-            SceneManager.LoadScene(levelToLoad);
+            StartCoroutine(LoadSceneWithFade(levelToLoad));
         }
         else
         {
             noSavedGameDialog.SetActive(true);
+        }
+    }
+
+    private IEnumerator LoadSceneWithFade(string sceneName)
+    {
+        if (fadeEffect != null)
+        {
+            // Fade out to black
+            fadeEffect.ScreenFade(1, 1.5f);
+            yield return new WaitForSeconds(1.5f);
+        }
+
+        // Load the scene
+        SceneManager.LoadScene(sceneName);
+
+        // Wait one frame to let Unity finish loading
+        yield return null;
+
+        // Re-link fadeEffect in the new scene
+        fadeEffect = Object.FindFirstObjectByType<UI_FadeEffect>();
+
+        if (fadeEffect != null)
+        {
+            // Fade back in from black
+            fadeEffect.ScreenFade(0, 1.5f);
         }
     }
 
