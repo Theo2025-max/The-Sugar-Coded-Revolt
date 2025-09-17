@@ -4,10 +4,8 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    // ------------------- PLAYER SETTINGS -------------------
     [Range(1, 10)]
     [SerializeField] int startingHealth = 5;
-
     [SerializeField] CinemachineCamera deathVirtualCamera;
     [SerializeField] Transform weaponCamera;
     [SerializeField] Image[] shieldBars;
@@ -16,14 +14,12 @@ public class PlayerHealth : MonoBehaviour
     int currentHealth;
     int gameOverVirtualCameraPriority = 20;
 
-    // ------------------- INITIALIZATION -------------------
     private void Awake()
     {
         currentHealth = startingHealth;
         AdjustShieldUI();
     }
 
-    // ------------------- DAMAGE HANDLING -------------------
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
@@ -35,7 +31,6 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    // ------------------- GAME OVER -------------------
     void PlayerGameOver()
     {
         weaponCamera.parent = null;
@@ -45,15 +40,26 @@ public class PlayerHealth : MonoBehaviour
         MyPlayerInput myPlayerInput = FindFirstObjectByType<MyPlayerInput>();
         myPlayerInput.SetCursorState(false);
 
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.PlayerDied();
+        }
+
         Destroy(this.gameObject);
     }
 
-    // ------------------- UI UPDATES -------------------
     void AdjustShieldUI()
     {
         for (int i = 0; i < shieldBars.Length; i++)
         {
-            shieldBars[i].gameObject.SetActive(i < currentHealth);
+            if (i < currentHealth)
+            {
+                shieldBars[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                shieldBars[i].gameObject.SetActive(false);
+            }
         }
     }
 }
