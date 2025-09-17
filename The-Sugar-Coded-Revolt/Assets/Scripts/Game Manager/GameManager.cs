@@ -14,12 +14,12 @@ public class GameManager : MonoBehaviour
     [Header("Fade Settings")]
     [SerializeField] UI_FadeEffect fadeEffect;
     [SerializeField] float startFadeDuration = 2f; 
-    [SerializeField] float winDelay = 2f;        
+    [SerializeField] float winDelay = 2f;         
     [SerializeField] float fadeDuration = 2f;      
     [SerializeField] string creditsSceneName = "Credits";
 
     private int enemiesLeft = 0;
-    private bool isPlayerAlive = true;
+    private bool isPlayerAlive = true; 
 
     const string ENEMIES_LEFT_STRING = "Enemies Left: ";
 
@@ -67,10 +67,10 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator WinSequence()
     {
-       
+        
         yield return new WaitForSeconds(winDelay);
 
-        
+       
         fadeEffect.ScreenFade(1f, fadeDuration, () =>
         {
             SceneManager.LoadScene(creditsSceneName);
