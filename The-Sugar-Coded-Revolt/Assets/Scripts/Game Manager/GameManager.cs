@@ -1,5 +1,5 @@
+﻿using System.Collections;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,16 +7,25 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
 
+    [Header("UI References")]
     [SerializeField] TMP_Text enemiesLeftText;
     [SerializeField] GameObject youWinText;
 
-    int enemiesLeft = 0;
+    [Header("Fade Settings")]
+    [SerializeField] UI_FadeEffect fadeEffect;
+    [SerializeField] float startFadeDuration = 2f; 
+    [SerializeField] float winDelay = 2f;        
+    [SerializeField] float fadeDuration = 2f;      
+    [SerializeField] string creditsSceneName = "Credits";
+
+    private int enemiesLeft = 0;
+    private bool isPlayerAlive = true;
 
     const string ENEMIES_LEFT_STRING = "Enemies Left: ";
 
     private void Awake()
     {
-        if(instance != null & instance != this)
+        if (instance != null && instance != this)
         {
             Destroy(gameObject);
         }
@@ -26,29 +35,73 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        UpdateEnemiesLeftUI();
+
+        
+        fadeEffect.ScreenFade(0f, startFadeDuration);
+    }
+
     public void AdjustEnemiesLeft(int amount)
     {
         enemiesLeft += amount;
-        string enemiesLeftTMP = enemiesLeft.ToString();
-        enemiesLeftText.text = ENEMIES_LEFT_STRING + enemiesLeftTMP;
-        //Debug.Log(ENEMIES_LEFT_STRING + enemiesLeftText.ToString());
+        UpdateEnemiesLeftUI();
 
-        if (enemiesLeft <= 0)
+        if (enemiesLeft <= 0 && isPlayerAlive)
         {
-            youWinText.SetActive(true);
+            HandleWinCondition();
         }
     }
-    public void RestartLevelButton()
+
+    private void UpdateEnemiesLeftUI()
     {
-        int currentScene = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentScene);
+        enemiesLeftText.text = ENEMIES_LEFT_STRING + enemiesLeft.ToString();
     }
 
+    private void HandleWinCondition()
+    {
+        youWinText.SetActive(true);
+        StartCoroutine(WinSequence());
+    }
 
+    private IEnumerator WinSequence()
+    {
+       
+        yield return new WaitForSeconds(winDelay);
+
+        
+        fadeEffect.ScreenFade(1f, fadeDuration, () =>
+        {
+            SceneManager.LoadScene(creditsSceneName);
+        });
+    }
+
+    // ------------------- PLAYER STATUS -------------------
+    public void PlayerDied()
+    {
+        isPlayerAlive = false;
+    }
+
+    // ------------------- BUTTON METHODS -------------------
+    public void RestartLevelButton()
+    {
+        StartCoroutine(RestartSequence());
+    }
+
+    private IEnumerator RestartSequence()
+    {
+        fadeEffect.ScreenFade(1f, fadeDuration, () =>
+        {
+            int currentScene = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(currentScene);
+        });
+        yield return null;
+    }
 
     public void QuitButton()
     {
-        Debug.LogWarning("Theo, this does not work in the Unity Editor! ");
+        Debug.LogWarning("Theo, this does not work in the Unity Editor!");
         Application.Quit();
     }
 }
