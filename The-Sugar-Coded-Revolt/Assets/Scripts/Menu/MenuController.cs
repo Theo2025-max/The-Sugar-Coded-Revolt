@@ -8,68 +8,68 @@ public class MenuController : MonoBehaviour
 {
     private UI_FadeEffect fadeEffect;
 
-    // ------------------- PERSISTENCE ACROSS SCENES -------------------
+    // ------------------- Keep this alive across scenes -------------------
     private void Awake()
     {
         fadeEffect = Object.FindFirstObjectByType<UI_FadeEffect>();
 
-        // If another MenuController already exists, destroy this one
+        // If there's already another MenuController, I don't need this one
         if (Object.FindObjectsByType<MenuController>(FindObjectsSortMode.None).Length > 1)
         {
             Destroy(gameObject);
             return;
         }
 
-        // Keep this MenuController alive across scenes
+        // Make sure this MenuController sticks around when I change scenes
         DontDestroyOnLoad(gameObject);
     }
 
-    // ------------------- VOLUME SETTINGS -------------------
+    // ------------------- Volume stuff -------------------
     [Header("Volume Setting")]
     [SerializeField] private TMP_Text volumeTextValue = null;
     [SerializeField] private Slider volumeSlider = null;
     [SerializeField] private float defaultVolume = 1.0f;
 
-    // ------------------- GAMEPLAY SETTINGS -------------------
+    // ------------------- Gameplay settings -------------------
     [Header("Gameplay Settings")]
     [SerializeField] private TMP_Text ControllerSenTextValue = null;
     [SerializeField] private Slider controllerSenSlider = null;
     [SerializeField] private float defaultSen = 0.47f;
     public float mainControllerSen = 0.47f;
 
-    // ------------------- CONFIRMATION -------------------
+    // ------------------- Confirmation prompt -------------------
     [Header("Confirmation")]
     [SerializeField] private GameObject comfirmationPrompt = null;
 
-    // ------------------- LEVELS TO LOAD -------------------
+    // ------------------- Levels I can load -------------------
     [Header("Levels To Load")]
     public string _newGameLevel;
     private string levelToLoad;
     [SerializeField] private GameObject noSavedGameDialog = null;
 
-    // ------------------- INITIALIZATION -------------------
+    // ------------------- Set everything up when scene starts -------------------
     private void Start()
     {
         if (fadeEffect != null)
             fadeEffect.ScreenFade(0, 1.5f);
 
-        // Load saved sensitivity
+        // Load the saved controller sensitivity
         mainControllerSen = PlayerPrefs.GetFloat("masterSen", defaultSen);
 
-        // Slider setup
-        controllerSenSlider.minValue = 0.05f; // clamp min
-        controllerSenSlider.maxValue = 1f;    // clamp max
+        // Make the slider work properly
+        controllerSenSlider.minValue = 0.05f; // minimum
+        controllerSenSlider.maxValue = 1f;    // maximum
         controllerSenSlider.value = mainControllerSen;
         ControllerSenTextValue.text = mainControllerSen.ToString("0.00");
 
-        // Volume setup
+        // Set up volume based on saved value
         float savedVolume = PlayerPrefs.GetFloat("masterVolume", defaultVolume);
         AudioListener.volume = savedVolume;
         volumeSlider.value = savedVolume;
         volumeTextValue.text = savedVolume.ToString("0.0");
     }
 
-    // ------------------- SCENE MANAGEMENT -------------------
+    // ------------------- Scene changing stuff -------------------
     public void NewGameDialogYes()
     {
         StartCoroutine(LoadSceneWithFade(_newGameLevel));
@@ -92,35 +92,35 @@ public class MenuController : MonoBehaviour
     {
         if (fadeEffect != null)
         {
-            // Fade out to black
+            // Fade the screen to black before changing
             fadeEffect.ScreenFade(1, 1.5f);
             yield return new WaitForSeconds(1.5f);
         }
 
-        // Load the scene
+        // Actually load the new scene
         SceneManager.LoadScene(sceneName);
 
-        // Wait one frame to let Unity finish loading
+        // Wait a frame so Unity finishes loading
         yield return null;
 
-        // Re-link fadeEffect in the new scene
+        // Grab the fade effect in the new scene
         fadeEffect = Object.FindFirstObjectByType<UI_FadeEffect>();
 
         if (fadeEffect != null)
         {
-            // Fade back in from black
+            // Fade back in so it doesn't stay black
             fadeEffect.ScreenFade(0, 1.5f);
         }
     }
 
-    // ------------------- QUIT GAME -------------------
+    // ------------------- Quit the game -------------------
     public void QuitButton()
     {
         Debug.Log("Peace out, Theo! Application quitting.");
         Application.Quit();
     }
 
-    // ------------------- VOLUME CONTROLS -------------------
+    // ------------------- Volume controls -------------------
     public void SetVolume(float volume)
     {
         AudioListener.volume = volume;
@@ -133,7 +133,7 @@ public class MenuController : MonoBehaviour
         StartCoroutine(ConfirmationBox());
     }
 
-    // ------------------- SENSITIVITY CONTROLS -------------------
+    // ------------------- Sensitivity controls -------------------
     public void SetControllerSen(float sensitivity)
     {
         mainControllerSen = Mathf.Clamp(sensitivity, 0.05f, 1f);
@@ -148,7 +148,7 @@ public class MenuController : MonoBehaviour
         StartCoroutine(ConfirmationBox());
     }
 
-    // ------------------- RESET BUTTON -------------------
+    // ------------------- Reset buttons -------------------
     public void ResetButton(string MenuType)
     {
         if (MenuType == "Audio")
@@ -168,7 +168,7 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    // ------------------- CONFIRMATION BOX -------------------
+    // ------------------- Show confirmation message for a bit -------------------
     public IEnumerator ConfirmationBox()
     {
         comfirmationPrompt.SetActive(true);
