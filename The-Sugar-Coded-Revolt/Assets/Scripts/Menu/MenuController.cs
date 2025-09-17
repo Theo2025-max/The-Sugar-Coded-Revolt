@@ -116,7 +116,7 @@ public class MenuController : MonoBehaviour
     // ------------------- QUIT GAME -------------------
     public void QuitButton()
     {
-        Debug.Log("Peace out! Application quitting.");
+        Debug.Log("Peace out, Theo! Application quitting.");
         Application.Quit();
     }
 
