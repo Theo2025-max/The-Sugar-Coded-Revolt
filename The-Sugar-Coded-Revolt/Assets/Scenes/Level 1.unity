@@ -4838,7 +4838,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &684489723
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7966,6 +7966,7 @@ MonoBehaviour:
   comfirmationPrompt: {fileID: 1559648913}
   pauseMenuUI: {fileID: 863562566}
   dimOverlay: {fileID: 586366174}
+  mController: {fileID: 0}
 --- !u!1 &1130500663
 GameObject:
   m_ObjectHideFlags: 0
@@ -15644,6 +15645,10 @@ PrefabInstance:
       propertyPath: 'shieldBars.Array.data[10]'
       value: 
       objectReference: {fileID: 1663905031}
+    - target: {fileID: 4936562154061724409, guid: 4f7b77394cb4146439ed0e6755dfe108, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5607616914133853379, guid: 4f7b77394cb4146439ed0e6755dfe108, type: 3}
       propertyPath: m_Name
       value: Player
