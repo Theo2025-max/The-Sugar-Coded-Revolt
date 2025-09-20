@@ -1,6 +1,7 @@
 ﻿using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        // Block damage if player has already won
+        if (GameManager.instance != null && GameManager.instance.HasPlayerWon())
+            return;
+
         currentHealth -= amount;
         AdjustShieldUI();
 
@@ -52,14 +57,27 @@ public class PlayerHealth : MonoBehaviour
     {
         for (int i = 0; i < shieldBars.Length; i++)
         {
-            if (i < currentHealth)
-            {
-                shieldBars[i].gameObject.SetActive(true);
-            }
-            else
-            {
-                shieldBars[i].gameObject.SetActive(false);
-            }
+            shieldBars[i].gameObject.SetActive(i < currentHealth);
+        }
+    }
+
+    // ------------------- WIN REFILL LOGIC -------------------
+    public void HealToFull(float delayBeforeStart = 0.5f, float durationPerShield = 0.2f)
+    {
+        StopAllCoroutines(); // Stop any ongoing animations
+        StartCoroutine(AnimateShieldsRefill(delayBeforeStart, durationPerShield));
+    }
+
+    private IEnumerator AnimateShieldsRefill(float delayBeforeStart, float durationPerShield)
+    {
+        // Wait a short delay before starting refill (for cinematic effect)
+        yield return new WaitForSeconds(delayBeforeStart);
+
+        for (int i = currentHealth; i < startingHealth; i++)
+        {
+            shieldBars[i].gameObject.SetActive(true);
+            currentHealth = i + 1;
+            yield return new WaitForSeconds(durationPerShield);
         }
     }
 }

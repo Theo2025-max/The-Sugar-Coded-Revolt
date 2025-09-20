@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
@@ -100,9 +100,9 @@ public class MyPlayerInput : MonoBehaviour
     }
 
     private void OnApplicationFocus(bool hasFocus)
-     {
-         SetCursorState(cursorLocked);
-     }
+    {
+        SetCursorState(cursorLocked);
+    }
 
     public void SetCursorState(bool isLocked)
     {

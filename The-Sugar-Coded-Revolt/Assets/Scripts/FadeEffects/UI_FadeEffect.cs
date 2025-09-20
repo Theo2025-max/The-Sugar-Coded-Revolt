@@ -24,7 +24,7 @@ public class UI_FadeEffect : MonoBehaviour
             fadeImage.color = new Color(currentColor.r, currentColor.g, currentColor.b, alpha);
             yield return null;
         }
-
+        Debug.Log("Screen has started fading");
         fadeImage.color = new Color(currentColor.r, currentColor.g, currentColor.b, targetAlpha);
         onComplete?.Invoke();
     }

@@ -27,6 +27,7 @@ public class PauseMenuController : MonoBehaviour
     [Header("Pause Menu References")]
     [SerializeField] private GameObject pauseMenuUI = null;
     [SerializeField] private GameObject dimOverlay = null;
+    [SerializeField] public MenuController mController;
 
     // =================== PRIVATE VARIABLES ===================
     private bool isPaused = false;
@@ -75,8 +76,16 @@ public class PauseMenuController : MonoBehaviour
     public void PauseGame()
     {
         isPaused = true;
-        if (pauseMenuUI != null) pauseMenuUI.SetActive(true);
-        if (dimOverlay != null) dimOverlay.SetActive(true);
+        if (pauseMenuUI != null)
+        {
+            pauseMenuUI.SetActive(true);
+            Debug.Log("pauseMenu Turned On");
+        }
+        if (dimOverlay != null) 
+        { 
+            dimOverlay.SetActive(true); 
+
+        }
 
         Time.timeScale = 0f;
 
@@ -124,6 +133,7 @@ public class PauseMenuController : MonoBehaviour
 
     public void OnQuitToMainMenuButton()
     {
+        
         Time.timeScale = 1f;
         if (fpsController != null) fpsController.enabled = true;
         if (playerInput != null) playerInput.cursorAffectsLook = true;
