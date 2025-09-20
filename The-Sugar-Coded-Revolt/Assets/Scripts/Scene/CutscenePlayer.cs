@@ -4,45 +4,33 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
-using UnityEngine.EventSystems;
 
 public class CutscenePlayer : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private VideoPlayer videoPlayer;
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private VideoPlayer videoPlayer; // my cutscene video player
+    [SerializeField] private AudioSource audioSource; // audio for the cutscene
 
     [Header("Next Scene")]
-    [SerializeField] private string nextSceneName = "MainMenu";
+    [SerializeField] private string nextSceneName = "MainMenu"; // scene to load after cutscene
 
     [Header("Audio")]
-    [SerializeField] private AudioClip overrideAudioClip;
+    [SerializeField] private AudioClip overrideAudioClip; // optional audio clip
     [Range(0f, 1f)]
     [SerializeField] private float audioVolume = 1f;
 
     [Header("Fade")]
-    [SerializeField] private Image fadeImage;
+    [SerializeField] private Image fadeImage; // black image for fade in/out
     [SerializeField] private float fadeDuration = 1f;
 
-    [Header("Skip Text Settings")]
-    [SerializeField] private TMP_Text skipText;
+    [Header("Skip")]
     [SerializeField] private bool allowSkip = true;
     [SerializeField] private KeyCode skipKey = KeyCode.Space;
+    [SerializeField] private TMP_Text skipText; // text that acts as skip button
+    [SerializeField] private float skipPulseSpeed = 2f;
+    [SerializeField] private float skipPulseAmount = 0.1f;
 
-    [Header("Pulse Animation")]
-    [SerializeField] private float pulseSpeed = 2f;
-    [SerializeField] private float pulseAmount = 0.1f;
-
-    [Header("Jiggle Animation")]
-    [SerializeField] private float jiggleDuration = 0.2f;
-    [SerializeField] private float jiggleScaleAmount = 0.2f;
-    [SerializeField] private float jiggleRotationAmount = 15f;
-    [SerializeField] private bool enableColorFlash = true;
-    [SerializeField] private Color flashColor = Color.yellow;
-
-    private bool isTransitioning = false;
-    private bool isJiggling = false;
-    private Color originalColor;
+    private bool isTransitioning = false; // prevent double transitions
 
     private void Awake()
     {
@@ -51,18 +39,29 @@ public class CutscenePlayer : MonoBehaviour
 
         videoPlayer.loopPointReached += OnVideoFinished;
 
-        if (skipText != null)
-            originalColor = skipText.color;
-    }
-
-    private IEnumerator Start()
-    {
-        
+        // make sure we start black
         if (fadeImage != null)
         {
             fadeImage.gameObject.SetActive(true);
-            yield return StartCoroutine(FadeFromBlack());
+            Color c = fadeImage.color;
+            c.a = 1f;
+            fadeImage.color = c;
         }
+
+        if (skipText != null)
+            skipText.gameObject.SetActive(false);
+    }
+
+    private void Start()
+    {
+        StartCoroutine(PlayCutscene());
+    }
+
+    private IEnumerator PlayCutscene()
+    {
+        // fade from black into video
+        if (fadeImage != null)
+            yield return StartCoroutine(FadeFromBlack());
 
         if (allowSkip && skipText != null)
             skipText.gameObject.SetActive(true);
@@ -79,36 +78,29 @@ public class CutscenePlayer : MonoBehaviour
 
     private void Update()
     {
-        // Pulse animation
-        if (skipText != null && !isJiggling)
-        {
-            float scale = 1f + Mathf.Sin(Time.time * pulseSpeed) * pulseAmount;
-            skipText.transform.localScale = new Vector3(scale, scale, 1f);
-        }
-
-        // Keyboard skip
+        // skip via keyboard
         if (allowSkip && !isTransitioning && Input.GetKeyDown(skipKey))
-        {
             StartCoroutine(TransitionToMenu());
-        }
 
-        // Mouse click skip
+        // skip via clicking skip text
         if (allowSkip && !isTransitioning && skipText != null && Input.GetMouseButtonDown(0))
         {
             Vector2 mousePos = Input.mousePosition;
             if (RectTransformUtility.RectangleContainsScreenPoint(skipText.rectTransform, mousePos))
-            {
-                if (!isJiggling)
-                    StartCoroutine(JiggleSkip());
-
                 StartCoroutine(TransitionToMenu());
-            }
+        }
+
+        // simple pulse effect for skip text
+        if (skipText != null && skipText.gameObject.activeSelf)
+        {
+            float scale = 1f + Mathf.Sin(Time.time * skipPulseSpeed) * skipPulseAmount;
+            skipText.transform.localScale = new Vector3(scale, scale, 1f);
         }
     }
 
     private void OnVideoFinished(VideoPlayer vp)
     {
-        StartCoroutine(TransitionToMenu());
+        StartCoroutine(TransitionToMenu()); // move to menu when video ends
     }
 
     private IEnumerator TransitionToMenu()
@@ -116,7 +108,10 @@ public class CutscenePlayer : MonoBehaviour
         if (isTransitioning) yield break;
         isTransitioning = true;
 
-        // Fade out audio
+        if (skipText != null)
+            skipText.gameObject.SetActive(false);
+
+        // fade out audio smoothly
         if (audioSource != null && audioSource.isPlaying)
         {
             float startVol = audioSource.volume;
@@ -132,7 +127,6 @@ public class CutscenePlayer : MonoBehaviour
 
         videoPlayer.Stop();
 
-        // Fade out screen
         if (fadeImage != null)
             yield return StartCoroutine(FadeToBlack());
 
@@ -177,45 +171,5 @@ public class CutscenePlayer : MonoBehaviour
 
         c.a = 1f;
         fadeImage.color = c;
-    }
-
-    private IEnumerator JiggleSkip()
-    {
-        isJiggling = true;
-
-        Vector3 originalScale = skipText.transform.localScale;
-        Quaternion originalRotation = skipText.transform.rotation;
-
-        float elapsed = 0f;
-
-        while (elapsed < jiggleDuration)
-        {
-            elapsed += Time.unscaledDeltaTime;
-            float t = elapsed / jiggleDuration;
-
-            // Scale jiggle
-            float scale = 1f + Mathf.Sin(t * Mathf.PI * 4) * jiggleScaleAmount;
-            skipText.transform.localScale = new Vector3(scale, scale, 1f);
-
-            // Rotation jiggle
-            float rotZ = Mathf.Sin(t * Mathf.PI * 4) * jiggleRotationAmount;
-            skipText.transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
-
-            // color flash
-            if (enableColorFlash)
-            {
-                float flashT = Mathf.Sin(t * Mathf.PI * 4) * 0.5f + 0.5f;
-                skipText.color = Color.Lerp(originalColor, flashColor, flashT);
-            }
-
-            yield return null;
-        }
-
-        // Reset
-        skipText.transform.localScale = originalScale;
-        skipText.transform.rotation = originalRotation;
-        skipText.color = originalColor;
-
-        isJiggling = false;
     }
 }
