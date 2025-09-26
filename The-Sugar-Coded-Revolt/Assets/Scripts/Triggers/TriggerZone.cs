@@ -1,32 +1,67 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class TriggerZone : MonoBehaviour
 {
-    public GameObject guidancePanel; // okay, this is my UI panel that pops up with controls
-    private float displayDuration = 5f; // I'll show the panel for 5 seconds
+    [Header("UI Settings")]
+    [SerializeField] private GameObject guidancePanel;
+    [SerializeField] private TMP_Text instructionText;
+
+    [Header("Controls")]
+    [SerializeField] private KeyCode skipKey = KeyCode.Escape;
+    [SerializeField] private bool deactivateAfterUse = true;
+
+    private bool isTriggered = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) // only react if the thing entering is the Player
+        if (other.CompareTag("Player") && !isTriggered)
         {
-            guidancePanel.SetActive(true); // show the panel when I walk in
-            Invoke("HidePanel", displayDuration); // automatically hide it after a delay
+            isTriggered = true;
+            guidancePanel.SetActive(true);
+            instructionText.text = GetFullInstructionText();
+            Time.timeScale = 0f; // freeze the game
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void Update()
     {
-        if (other.CompareTag("Player")) // again, make sure it's the Player leaving
+        if (!isTriggered) return;
+
+        if (Input.GetKeyDown(skipKey))
         {
-            HidePanel(); // hide the panel right away when I walk out
+            EndTutorial();
         }
     }
 
-    private void HidePanel()
+    private void EndTutorial()
     {
-        guidancePanel.SetActive(false); // just turn off the panel
+        guidancePanel.SetActive(false);
+        Time.timeScale = 1f; // resume the game
+        isTriggered = false;
+
+        if (deactivateAfterUse)
+            gameObject.SetActive(false);
+    }
+
+    private string GetFullInstructionText()
+    {
+        return
+@"Movement
+WASD or Arrow Keys – Move your character.
+Left Shift – Sprint
+Spacebar – Jump over obstacles.
+
+Combat
+Left Click – Shoot your weapon.
+Right Click – Aim or zoom (for sniper rifles).
+Hold Left Click – Continuous fire with automatic weapons.
+
+Walk near a weapon to pick it up or switch guns
+Walk into yellow glowing boxes to collect ammo
+
+Win Condition: Destroy all enemies, enemy gates, and the vanguard gun!
+
+Press ESC to close this tutorial.";
     }
 }
-
-   
