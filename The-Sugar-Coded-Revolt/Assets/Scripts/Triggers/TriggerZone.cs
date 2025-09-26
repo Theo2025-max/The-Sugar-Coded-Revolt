@@ -8,10 +8,16 @@ public class TriggerZone : MonoBehaviour
     [SerializeField] private TMP_Text instructionText;
 
     [Header("Controls")]
-    [SerializeField] private KeyCode skipKey = KeyCode.Escape;
+    [SerializeField] private KeyCode skipKey = KeyCode.Backspace; // Default set to Backspace
     [SerializeField] private bool deactivateAfterUse = true;
 
     private bool isTriggered = false;
+
+    private void Awake()
+    {
+        // Force the skip key to Backspace at runtime to override Inspector
+        skipKey = KeyCode.Backspace;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -47,21 +53,23 @@ public class TriggerZone : MonoBehaviour
     private string GetFullInstructionText()
     {
         return
-@"Movement
-WASD or Arrow Keys – Move your character.
+@"Movement:
+WASD or Arrow Keys – Move
 Left Shift – Sprint
-Spacebar – Jump over obstacles.
+Spacebar – Jump
 
-Combat
-Left Click – Shoot your weapon.
-Right Click – Aim or zoom (for sniper rifles).
-Hold Left Click – Continuous fire with automatic weapons.
+Combat:
+Left Click – Shoot
+Right Click – Aim/Zoom
+Hold Left Click – Automatic Fire
 
+Interact:
 Walk near a weapon to pick it up or switch guns
 Walk into yellow glowing boxes to collect ammo
 
-Win Condition: Destroy all enemies, enemy gates, and the vanguard gun!
+Objective:
+Destroy all enemies, enemy gates, and the vanguard gun
 
-Press ESC to close this tutorial.";
+Press Backspace to close this tutorial.";
     }
 }
